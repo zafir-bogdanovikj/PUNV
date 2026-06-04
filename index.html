@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Офлајн Мисија</title>
+    <script src="javaScript/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="scoreboard">
+    <div class="logo">🚀 Офлајн Мисија</div>
+    <div class="stats-container">
+        <span id="points-display">Поени: ⭐ 0</span>
+        <span id="skips-display">Џокери: 🃏 0</span>
+    </div>
+</header>
+
+<main class="main-container">
+
+    <div id="home-screen">
+        <section class="card challenge-card">
+            <h2 id="home-challenge-title">Вчитавање...</h2>
+            <p class="challenge-text" id="main-challenge-title">Време е за дигитален детокс!</p>
+            <br>
+            <div class="button-group">
+                <button id="start-btn" onclick="startChallenge()">Започни мисија</button>
+                <button id="skip-btn" class="secondary-btn" onclick="useSkipToken()">Џокер</button>
+            </div>
+        </section>
+
+        <section class="card shop-card">
+            <h2>Продавница за моќи 🛒</h2>
+            <p>Троши ги твоите поени за олеснувања во играта!</p>
+            <div class="shop-items">
+                <div class="item">
+                    <span>Купи Ваучер за прескокнување</span>
+                    <button onclick="buySkipToken()">Купи (200 поени)</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="card info-card">
+            <h3>Зошто го правиме ова? 💡</h3>
+            <p id="hbsc-fact">Студијата на HBSC покажува дека балансот помеѓу онлајн и офлајн животот помага во намалување на стресот кај младите.</p>
+        </section>
+    </div>
+
+    <div id="challenge-screen" class="hidden">
+        <section class="card active-challenge-card">
+            <div class="live-clocks">
+                <div class="clock-box">Тековно време: <span id="live-clock">00:00:00</span></div>
+                <div class="clock-box highlight">Преостанато време: <span id="timer">00:00</span></div>
+            </div>
+
+            <h2 id="active-title">Име на предизвикот</h2>
+            <p style="margin-bottom: 20px;">Исполни ги следниве чекори за да ја завршиш мисијата:</p>
+
+            <div id="subtasks-container"></div>
+
+            <div id="success-message" class="success-box hidden">
+                🎉 Одлично го направи предизвикот! Во преостанатото време одмори од телефонот.
+            </div>
+        </section>
+    </div>
+
+</main>
+
+<div id="custom-alert" class="modal-overlay hidden">
+    <div class="modal-box">
+        <div id="modal-icon" class="modal-icon">🚨</div>
+        <h2 id="modal-title">Ауу!</h2>
+        <p id="modal-message">Порака до корисникот.</p>
+        <button id="modal-btn" onclick="closeModalAndGoHome()">Обиди се со следен предизвик 🔄</button>
+    </div>
+</div>
+
+</body>
+</html>
