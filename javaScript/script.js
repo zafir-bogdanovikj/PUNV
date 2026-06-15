@@ -124,7 +124,7 @@ const hbscFacts = [
 
 let currentChallengeIndex = 0;
 let totalPoints = parseInt(localStorage.getItem('totalPoints')) || 0;
-let skipTokens = parseInt(localStorage.getItem('skipTokens')) || 0;
+let skipTokens = parseInt(localStorage.getItem('skipTokens')) || 1;
 let countdownInterval = null;
 let liveClockInterval = null;
 let isChallengeActive = false;
