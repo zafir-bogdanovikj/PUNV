@@ -168,7 +168,7 @@ function updateUIElements() {
 }
 
 function displayCurrentChallengeInfo() {
-    let savedIndex = localStorage.getItem('activeChallengeIndex');
+    let savedIndex = getChallengeIndex();
 
     if (savedIndex !== null) {
         currentChallengeIndex = parseInt(savedIndex);
@@ -242,8 +242,12 @@ function checkSubtasksCompletion() {
     }
 }
 
+function getChallengeIndex() {
+    return Math.floor(Math.random() * challengeDatabase.length);
+}
+
 function generateAndSaveNewChallengeIndex() {
-    currentChallengeIndex = Math.floor(Math.random() * challengeDatabase.length);
+    currentChallengeIndex = getChallengeIndex();
     localStorage.setItem('activeChallengeIndex', currentChallengeIndex);
 }
 
