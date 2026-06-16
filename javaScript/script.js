@@ -48,12 +48,6 @@ const challengeDatabase = [
         subtasks: ["Пушти ја твојата омилена најбрза песна во собата.", "Стани од столот и танцувај или скокај слободно во нејзиниот ритам.", "Издржи во движење сѐ додека песната не заврши целосно."]
     },
     {
-        category: "Здрави навики 🍏",
-        title: "Природна ужинка",
-        duration: 180, points: 25,
-        subtasks: ["Отвори го делот за овошје и зеленчук во кујната.", "Одбери едно јаболко, банана или портокал.", "Измиј го убаво и изеди го како ужинка наместо чипс или чоколадо."]
-    },
-    {
         category: "Спиење 🛌",
         title: "Вечерно аналогно читање",
         duration: 600, points: 40,
@@ -168,7 +162,7 @@ function updateUIElements() {
 }
 
 function displayCurrentChallengeInfo() {
-    let savedIndex = getChallengeIndex();
+    let savedIndex = localStorage.getItem('activeChallengeIndex');
 
     if (savedIndex !== null) {
         currentChallengeIndex = parseInt(savedIndex);
@@ -204,9 +198,9 @@ function displayCurrentChallengeInfo() {
             itemDiv.className = "subtask-item";
             itemDiv.setAttribute("onclick", `toggleCheckbox(${index})`);
             itemDiv.innerHTML = `
-                <input type="checkbox" id="task-${index}" onclick="event.stopPropagation(); checkSubtasksCompletion();">
-                <span>${task}</span>
-            `;
+               <input type="checkbox" id="task-${index}" onclick="event.stopPropagation(); checkSubtasksCompletion();">
+               <span>${task}</span>
+           `;
             subtasksContainer.appendChild(itemDiv);
         });
     }

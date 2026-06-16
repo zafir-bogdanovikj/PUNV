@@ -1,6 +1,3 @@
-/* ==========================================
-   1. ОСНОВНИ СТИЛОВИ И РЕСЕТИРАЊЕ
-   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -18,14 +15,10 @@ body {
     padding-bottom: 40px;
 }
 
-/* Системска класа за сокривање на екраните преку JavaScript */
 .hidden {
     display: none !important;
 }
 
-/* ==========================================
-   2. ГЛАВНА ЛЕНТА (SCOREBOARD)
-   ========================================== */
 .scoreboard {
     width: 100%;
     max-width: 800px;
@@ -54,9 +47,6 @@ body {
     font-weight: 600;
 }
 
-/* ==========================================
-   3. КОНТЕЈНЕРИ И КАРТИЧКИ (CARDS)
-   ========================================== */
 .main-container {
     width: 100%;
     max-width: 600px;
@@ -66,7 +56,6 @@ body {
     padding: 0 15px;
 }
 
-/* Општ стил за сите картички во апликацијата */
 .card {
     background: #1e293b;
     border-radius: 16px;
@@ -74,7 +63,7 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     border: 1px solid #334155;
     transition: transform 0.2s;
-    margin-bottom: 20px; /* Растојание меѓу картичките */
+    margin-bottom: 20px;
 }
 
 .card:hover {
@@ -91,14 +80,10 @@ p {
     line-height: 1.5;
 }
 
-/* Едукативната картичка за HBSC */
 .info-card {
     border-left: 5px solid #a855f7;
 }
 
-/* ==========================================
-   4. КОПЧИЊА (BUTTONS)
-   ========================================== */
 .button-group {
     display: flex;
     flex-direction: column;
@@ -131,9 +116,6 @@ button:active {
     border: 1px solid #475569;
 }
 
-/* ==========================================
-   5. ПРОДАВНИЦА ЗА МОЌИ (SHOP)
-   ========================================== */
 .shop-items {
     margin-top: 15px;
 }
@@ -153,15 +135,12 @@ button:active {
     font-size: 0.85rem;
 }
 
-/* ==========================================
-   6. ЕКРАН ЗА АКТИВЕН ПРЕДИЗВИК & ЧАСОВНИЦИ
-   ========================================== */
 .active-challenge-card {
     background: #1e293b;
     border-radius: 16px;
     padding: 25px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    border: 1px solid #a855f7; /* Виолетов раб за активна мисија */
+    border: 1px solid #a855f7;
 }
 
 .live-clocks {
@@ -183,7 +162,6 @@ button:active {
     text-align: center;
 }
 
-/* Нагласување на тајмерот за одбројување */
 .clock-box.highlight {
     border-color: #a855f7;
     color: #a855f7;
@@ -201,9 +179,6 @@ button:active {
     color: #a855f7;
 }
 
-/* ==========================================
-   7. ЛИСТА СО ЧЕКБОКСОВИ (SUBTASKS)
-   ========================================== */
 .subtask-item {
     display: flex;
     align-items: center;
@@ -225,7 +200,7 @@ button:active {
     width: 22px;
     height: 22px;
     margin-right: 15px;
-    accent-color: #38bdf8; /* Го менува штиклираното во светло сина боја */
+    accent-color: #38bdf8;
     cursor: pointer;
 }
 
@@ -234,9 +209,6 @@ button:active {
     color: #e2e8f0;
 }
 
-/* ==========================================
-   8. ПОРАКА ЗА УСПЕХ (SUCCESS BOX)
-   ========================================== */
 .success-box {
     background: rgba(34, 197, 94, 0.15);
     border: 1px solid #22c55e;
@@ -250,25 +222,22 @@ button:active {
     animation: fadeIn 0.4s ease-in-out;
 }
 
-/* ==========================================
-   9. ПРИЈАТЕЛСКИ ПОП-АП (ЦЕЛ ЕКРАН / НОВА СТРАНА)
-   ========================================== */
 .modal-overlay {
-    position: fixed; /* Го фиксира прозорецот преку целиот прелистувач */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #121824; /* Ја зема истата темна боја на позадина за да изгледа како нова страна */
+    background-color: #121824;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Ова гарантира дека ќе биде НАД апсолутно сè друго */
+    z-index: 9999;
 }
 
 .modal-box {
     background: #1e293b;
-    border: 2px solid #a855f7; /* Виолетов неонски раб за привлечност */
+    border: 2px solid #a855f7;
     padding: 40px 30px;
     border-radius: 24px;
     width: 90%;
