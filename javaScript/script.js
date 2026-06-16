@@ -48,6 +48,12 @@ const challengeDatabase = [
         subtasks: ["Пушти ја твојата омилена најбрза песна во собата.", "Стани од столот и танцувај или скокај слободно во нејзиниот ритам.", "Издржи во движење сѐ додека песната не заврши целосно."]
     },
     {
+        category: "Здрави навики 🍏",
+        title: "Природна ужинка",
+        duration: 180, points: 25,
+        subtasks: ["Отвори го делот за овошје и зеленчук во кујната.", "Одбери едно јаболко, банана или портокал.", "Измиј го убаво и изеди го како ужинка наместо чипс или чоколадо."]
+    },
+    {
         category: "Спиење 🛌",
         title: "Вечерно аналогно читање",
         duration: 600, points: 40,
@@ -118,7 +124,8 @@ const hbscFacts = [
 
 let currentChallengeIndex = 0;
 let totalPoints = parseInt(localStorage.getItem('totalPoints')) || 0;
-let skipTokens = parseInt(localStorage.getItem('skipTokens')) || 1;
+let storedSkipTokens = localStorage.getItem('skipTokens');
+let skipTokens = storedSkipTokens !== null ? parseInt(storedSkipTokens) : 1;
 let countdownInterval = null;
 let liveClockInterval = null;
 let isChallengeActive = false;
